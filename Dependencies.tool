@@ -19,6 +19,8 @@ else
 	git clone https://github.com/moraea/non-metal-frameworks
 fi
 
+chflags hidden non-metal-common non-metal-binaries non-metal-frameworks
+
 non-metal-common/Build.tool
 
 non-metal-frameworks/Dependencies.tool
