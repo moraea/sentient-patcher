@@ -13,7 +13,7 @@ rm -f $slf/OpenGL.framework/Versions/A/Libraries/libCoreFSCache.dylib
 
 cp -R $binaries/10.14.3*/GPUSupport.framework $slpf
 
-wrapped=Build/non-metal-frameworks/Build/Wrapped
+wrapped=Build/non-metal-frameworks/Build/12
 
 mkdir -p $slpf/SkyLight.framework/Versions/A
 cp $wrapped/Common/SkyLight $wrapped/Common/SkyLightOld.dylib $slpf/SkyLight.framework/Versions/A
