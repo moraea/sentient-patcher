@@ -27,7 +27,7 @@ unset DYLD_SHARED_REGION
 set -e
 
 # TODO: this is unreliable
-long="$(ls -t "$preboot" | head -1)"
+long="$(ls -t "$preboot" | grep -v '\.' | head -1)"
 
 cp /ffff.efi "$preboot/$long/System/Library/CoreServices/boot.efi"
 

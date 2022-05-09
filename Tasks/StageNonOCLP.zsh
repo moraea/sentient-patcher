@@ -3,9 +3,17 @@ overlay=Build/SystemOverlay
 mkdir -p $overlay/System/Library/Extensions/IO80211FamilyLegacy.kext/Contents/PlugIns
 cp -R Build/AirPortBrcmNIC.kext $overlay/System/Library/Extensions/IO80211FamilyLegacy.kext/Contents/PlugIns
 
-# PatchBluetooth
-# PatchLPM
-# PatchWeb
+mkdir -p $overlay/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns
+cp -R Build/X86PlatformPlugin.kext $overlay/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns
+
+cp -R $binaries/10.13*/AppleHDA.kext $overlay/System/Library/Extensions
+
+mkdir -p $overlay/usr/sbin
+cp Build/bluetoothd.patched $overlay/usr/sbin/bluetoothd
+cp Build/BlueTool.patched $overlay/usr/sbin/BlueTool
+
+mkdir -p $overlay/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices
+cp -R Build/com.apple.WebKit.WebContent.xpc $overlay/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices
 
 overlay=Build/RamdiskOverlay
 rm -rf $overlay
