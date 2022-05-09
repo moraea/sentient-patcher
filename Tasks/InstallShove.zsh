@@ -9,7 +9,9 @@ chmod -R 755 /System/Library/Extensions
 
 kmutil install --update-all --update-preboot
 
+set +e
 cp -R Build/SystemOverlay/ /
+set -e
 
 sync
 reboot

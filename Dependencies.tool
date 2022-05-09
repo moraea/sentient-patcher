@@ -3,6 +3,8 @@
 set -e
 cd "$(dirname "$0")"
 
+export SENTIENT_PATCHER=1
+
 rm -rf Build
 mkdir Build
 
