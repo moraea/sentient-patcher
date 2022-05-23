@@ -53,6 +53,7 @@ otool forward (?m)^.*?CFStringCompare
 otool forward (?m)^.*?je
 nop 0x6
 
+# TODO: might not be needed anymore (or never was in the first place?)
 set 0x0
 otool forward (?m)^.*?Third Party Dongle has the same address as the internal module
 otool backward (?m)^.*?jmp
@@ -73,6 +74,7 @@ cp -R $binaries/$major*/com.apple.WebKit.WebContent.xpc Build
 rm -f Build/WebEnts.plist
 codesign --dump --entitlements Build/WebEnts.plist --xml Build/com.apple.WebKit.WebContent.xpc
 defaults delete "$PWD/Build/WebEnts.plist" com.apple.private.security.message-filter
+rm -rf Build/com.apple.WebKit.WebContent.xpc/Contents/PlugIns/MediaFormatReader.bundle
 plutil -convert xml1 Build/WebEnts.plist
 codesign -f -s - --entitlements Build/WebEnts.plist Build/com.apple.WebKit.WebContent.xpc
 
