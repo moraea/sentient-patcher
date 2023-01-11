@@ -13,7 +13,7 @@ rm -f $slf/OpenGL.framework/Versions/A/Libraries/libCoreFSCache.dylib
 
 cp -R $binaries/10.14.3*/GPUSupport.framework $slpf
 
-wrapped=Build/non-metal-frameworks/Build/12
+wrapped=Build/non-metal-frameworks/Build/13
 
 mkdir -p $slpf/SkyLight.framework/Versions/A
 cp $wrapped/Common/SkyLight $wrapped/Common/SkyLightOld.dylib $slpf/SkyLight.framework/Versions/A
@@ -25,10 +25,13 @@ cp $wrapped/Common/CoreDisplay $wrapped/Common/CoreDisplayOld.dylib $slf/CoreDis
 ln -s A $slf/CoreDisplay.framework/Versions/Current
 ln -s Versions/Current/CoreDisplay $slf/CoreDisplay.framework/CoreDisplay
 
-mkdir -p $slf/QuartzCore.framework/Versions/A
-cp $wrapped/Common/QuartzCore $wrapped/Common/QuartzCoreOld.dylib $slf/QuartzCore.framework/Versions/A
-ln -s A $slf/QuartzCore.framework/Versions/Current
-ln -s Versions/Current/QuartzCore $slf/QuartzCore.framework/QuartzCore
+if test -e $wrapped/Common/QuartzCore
+then
+	mkdir -p $slf/QuartzCore.framework/Versions/A
+	cp $wrapped/Common/QuartzCore $wrapped/Common/QuartzCoreOld.dylib $slf/QuartzCore.framework/Versions/A
+	ln -s A $slf/QuartzCore.framework/Versions/Current
+	ln -s Versions/Current/QuartzCore $slf/QuartzCore.framework/QuartzCore
+fi
 
 mkdir -p $slf/IOSurface.framework/Versions/A
 cp $wrapped/Zoe/IOSurface $wrapped/Zoe/IOSurfaceOld.dylib $slf/IOSurface.framework/Versions/A

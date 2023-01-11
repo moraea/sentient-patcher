@@ -1,4 +1,3 @@
-/System/Library/UserEventPlugins/com.apple.telemetry.plugin
 /System/Library/Extensions/IOAcceleratorFamily2.kext
 /System/Library/Extensions/IOGPUFamily.kext
 /System/Library/Extensions/AMDRadeonX4000.kext
@@ -21,3 +20,4 @@
 /System/Library/Extensions/AppleIntelFramebufferAzul.kext
 /System/Library/Extensions/AppleParavirtGPU.kext
 /System/Library/Extensions/GeForce.kext
+/System/Library/Extensions/AppleAfterburner.kext
