@@ -2,7 +2,7 @@
 
 export MORAEA_LOCAL_DEPENDENCIES=1
 export AUTO_TARGET=13
-export AUTO_QC=11
+export AUTO_QC=10.15
 export TARGET_VOLUME=/Volumes/131b3
 
 set -e

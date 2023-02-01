@@ -1,10 +1,11 @@
 target="$1"
 
-mount -uw "/Volumes/$target/"
+mount -uw "$target"
 
-rm -f "/Volumes/$target/System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight"
-rm -f "/Volumes/$target/System/Library/Frameworks/CoreDisplay.framwork/Versions/A/CoreDisplay"
-rm -f "/Volumes/$target/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore"
+rm -f "$target/System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight"
+rm -f "$target/System/Library/Frameworks/CoreDisplay.framework/Versions/A/CoreDisplay"
+rm -f "$target/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore"
 
 sync
-reboot
+
+killall -9 WindowServer loginwindow
